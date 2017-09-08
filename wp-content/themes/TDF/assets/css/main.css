@@ -1,0 +1,955 @@
+/*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* group clearing for floats */
+.group:before,
+.group:after {
+content: "";
+display: table;
+}
+.group:after {
+clear: both;
+}
+.group {
+zoom: 1; /* IE6&7 */
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+    @font-face {
+        font-family: 'web_serveroffregular';
+        src: url('../fonts/web_serveroff-webfont.woff2') format('woff2'),
+             url('../fonts/web_serveroff-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+
+
+
+    @font-face {
+        font-family: 'web_serveroffitalic';
+        src: url('../fonts/web_serveroff-italic-webfont.woff2') format('woff2'),
+             url('../fonts/web_serveroff-italic-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+
+
+    body, html{
+        font-family: 'web_serveroffregular', sans-serif;
+        font-size: 16px;
+        color: #272838;
+         }
+
+    body {
+        border: thick solid rgba(228, 215, 188, 0.5);
+        border-radius: 5px;
+
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+    a {
+        font-weight: 700;
+        color: #272838;
+        text-decoration: none;
+    }
+
+    p{
+        font-size: 1.4em;
+        line-height: 1.4;
+    }
+
+    h1, h2, h3, h4, h5, h6{
+        font-family: 'Exo', sans-serif;
+        font-weight: 700;
+    }
+
+    h1{
+        font-size: 1.5em;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    h6{
+        font-size: 1em;
+        text-align: center;
+    }
+
+    /* Header =========================== */
+    .main-header {
+        width: 90%;
+        margin: auto;
+        max-width: 480px;
+        
+      }
+
+    #sq {
+        display: none;
+    }
+
+    #logo {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 5px;
+    }
+
+    nav {
+        font-family: 'Exo', sans-serif;
+        width: 96%;
+    }
+
+    nav i{
+        padding-right:10px;
+    }
+
+        nav ul {
+                list-style: none;
+                padding: 0;
+            }
+
+        nav ul li{
+            border-bottom: 5px solid #272838;
+            text-align: center;
+            padding: 15px 0;
+        }
+             nav ul li a{
+                font-size: 1.125em;
+             }
+
+            nav ul li a:hover{
+                color: #00798d;
+            }
+
+    /* wrapper */
+    .wrapper {
+        background-color: #272838;
+        padding-bottom:2em;
+    }
+
+    .hero-area, .capabilities, .intro {
+        width: 96%;
+        margin: auto;
+        max-width: 480px
+    }
+
+    .hero-area h1 {
+        color: #fff;
+        margin-top: -1.25em;
+        padding-top:2em;
+    }
+
+    .hero-area h1 span {
+        color: #f15b61;
+    }
+
+    .hero-area h1 span:hover {
+        color: #f89d66;
+    }
+
+    .cap-img {
+        width: 38%;
+        float:left;
+    }
+
+    .capabilities img {
+        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+        border-radius: 50%;
+        border: 0.25em solid #fff;
+    }
+
+    .capabilities img:hover {
+        -webkit-filter: none; /* Safari 6.0 - 9.0 */
+        filter: none;
+        border: 0.25em solid #f89d66;
+    }
+
+    .capabilities h3 {
+        color: #fff;
+        text-align: center;
+        font-size: 1em;
+        text-indent: 0;
+        line-height: 1.5;
+        float: left;
+        padding-top: 2.5em;
+    }
+
+    .capabilities h3:hover {
+        color: #f89d66;
+    } 
+
+
+    /*credentials */
+    .featured-projects {
+        display: none;
+    }
+
+     .projects {
+        width: 90%;
+        margin: 25px auto;
+    }
+
+
+
+    .projects h6 span {
+        color: #ff1654;
+    }
+
+    .projects h6 a {
+        color: #02c39a;
+        text-decoration: underline;
+    }
+
+    .projects h6 a:hover {
+        color: #f89d66;
+    }
+
+    /*   intro   */
+    .intro {
+        text-align: justify;
+        width: 90%;
+        margin: auto;
+        max-width: 480px;
+        border-bottom: 2px solid #272838;
+    }
+
+
+    .btn{
+        background-color: #272838;
+        border: none;
+        color: #fff;
+        font-weight: 700;
+        line-height: 2.5;
+        text-align: center;
+        box-shadow: 2px 2px 0px #DADADA;
+        height: 2.5em;
+        width: 50%;
+        display: block;
+        margin:2.5em auto;
+      
+    }
+
+    .btn:hover{
+        background-color: #fff;
+        color: #272838;
+    }
+
+
+    /**footer**/
+    .footer-wrap {
+        width: 90%;
+        margin: auto;
+    }
+
+    footer {
+        margin-top: 15px;
+        background-color: #272838;
+        padding: 1.25em 0;
+    }
+
+
+    footer p {
+        font-size: 1em;
+        color: #fff;
+        text-align: center;
+        margin: 0;
+    }
+
+    .highlighted-project {
+    margin: auto;
+    width: 90%;
+    padding: 15px 25px;
+    }
+
+
+    .highlighted-project-text h3, h6, p {
+        text-align: left;
+        margin: 0;
+        padding: 0 0 5px 0;
+    }
+
+    .highlighted-project-text h3 {
+        font-family: 'web_serveroffregular', sans-serif;
+        color: #f15b61;
+        font-weight: bolder;
+        font-size: 1.4em;
+    }
+
+    h6 span {
+        text-decoration: underline;
+    }
+
+    .highlighted-project-img figure {
+        margin: 0 5px;
+    }
+    
+
+
+
+
+    /*logo404 page*/
+
+    .logo404 {
+      max-width: 40%;
+      margin:auto;
+     padding: 25px;
+    }
+
+
+    /*work-in-progress-page*/
+
+    .just-for-fun {
+      width: 100%
+    }
+
+    .what {
+      max-width: 500px;
+      margin: auto;
+    }
+
+    #dog, #gorilla {
+      width: 40%;
+      float: left;
+      padding: 10px;
+    }
+
+     #penguin  {
+      margin: auto;
+      width: 40%;
+      display: block;
+    }
+
+    #what .hero-area img{
+      width: 85%
+      margin: auto;
+    }
+
+    .inprogress {
+      width: 95%;
+      margin: auto;
+    }
+    .inprogress a {
+      color: #f15b61;
+}
+
+/* work/credentials page */
+
+    .project {
+      border: 1px #ccc;
+      padding: 0.2em;
+    }
+
+    .pastprojects .intro {
+      width: 90%;
+      margin: 0.75em auto;
+      float: none;
+    }
+
+    .pastprojects p {
+        margin-top: 0.75em;
+    }
+
+    .pastprojects h2 {
+          font-size: 1.5em;
+          color: #f15b61;
+          text-align: center;
+    }
+
+
+    .pastprojects h5 {
+          font-size: 1.2em;
+          text-transform: uppercase;
+          color: #30b996;
+          text-align: center;
+        }
+
+    .work-credentials {
+        width: 90%;
+        margin: auto;
+    }
+
+    .work p {
+      padding: 7%;
+      text-align: justify;
+    }
+
+    .project-img {
+      max-width: 470px;
+      min-width: 100px;
+      margin: auto;
+      border: 5px solid #003d5b;
+      border-radius: 15px;
+      padding: 1%;
+      background-color: white;
+    }
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+/* ===== == = === 20em (320px) === = == ===== */
+
+@media only screen and (min-width : 20em) {
+
+    .capabilities h3 {
+    text-indent: 0;
+    line-height: 1.5;
+    float: left;
+    padding-top: 5em;
+}
+
+
+}
+
+/* ===== == = === 30em (480px) === = == ===== */
+
+@media only screen and (min-width : 30em) {
+    .capabilities h3 {
+        font-size: 1.5em;
+    }
+
+    /*featured-latest project at bottom of frontpage float left and right*/
+
+    .highlighted-project-text {
+        float: left;
+        margin: auto;
+        width: 48%;
+    }
+
+
+    h6 span {
+        text-decoration: underline;
+    }
+
+    .highlighted-project-img {
+        float: right;
+        width: 45%;
+    }
+
+    .highlighted-project-img figure {
+        margin: 0 5px;
+    }
+
+}
+
+/* ===== == = === 37.5em (600px) === = == ===== */
+/* at this breakpoin the logo and nav float to left and right */
+@media only screen and (min-width: 37.5em) {
+    .main-header {
+        max-width: 660px;
+        padding-bottom: 1.25em;
+    }
+    
+    #sq {
+        display: initial;
+    }
+
+    img #sq {
+        padding: 5px, 45px;
+    }
+
+    /* rectangle logo not visible on tablets and desktop views*/
+    #rec {
+        display: none;
+    }
+   #logo {
+        width: 20%;
+        float: left;
+    }
+
+    #logo img{
+        width: 100%;
+        margin: auto;
+    }
+    nav {
+        width: 50%;
+        float:right;
+    }
+
+    nav ul{
+        margin: 0;
+    }
+
+    nav ul li {
+        display: inline;
+        padding:0 5%;
+        border:none;
+        line-height: 2;
+        position:relative;
+        top:60px;
+    }
+    .hero-area, .capabilities, .intro {
+        width: 90%;
+        margin: auto;
+        max-width: 1300px
+    }
+
+    .hero-area h1 {
+        font-size: 2em;
+        margin-top: 0;
+        padding-top: 0.75em;
+    }
+
+    .capabilities h3 {
+        font-size: 1.75em;
+        padding-top: 2.5em;
+        margin-left: 2em;
+    }
+}
+
+/* ===== == = === 48em (768px) === = == ===== */
+/* at this breakpoint the skills float
+next to each other rather than stack*/
+@media only screen and (min-width : 48em) {
+
+
+    .skill {
+        width: 33%;
+        float: left;
+    }
+
+    .cap-img {
+    width: 15.625em;
+    margin: auto;
+    }
+
+     .skill h3 {
+      text-align: center;
+      font-size: 2em;
+      text-indent: 0;
+      line-height: 1.5;
+      float: none;
+      padding-top: 0.5em;
+    }
+
+    
+
+   
+
+    .btn{
+        width: 25%;
+    }
+
+    #copyright {
+        float: left;
+    }
+
+    #footer {
+        float: right;
+    }
+
+    /*work in progress page*/
+    #dog, #gorilla, #penguin {
+      width: 29%;
+      float: left;
+      padding: 15px;
+    }
+}
+/* ===== == = === 56.25em (900px) === = == ===== */
+/* at this breakpoint past projects are now visible */
+@media only screen and (min-width : 56.25em) {
+ .main-header {
+    max-width: 1300px;
+  }
+
+.hero-area h1 {
+    font-size: 3em;
+}
+
+
+.skill h3 {
+    font-size: 2.25em;
+    margin-left: 0px;
+    margin-top: 0px;
+    padding-top: 25px
+}
+
+.cap-img {
+    float:none;
+    width:  16em;
+}
+
+.projects h6 {
+    margin-top:5em;
+}
+
+
+    .featured-projects{
+        display: initial;
+    }
+    .portfolio {
+        background-color: #f15b61;
+        border: solid 2px #f15b61;
+        float: left;
+        margin: auto;
+        width: 24%;
+    }
+
+    .portfolio-img {
+       margin: 0 0.875em;
+       width: 95%;
+    }
+
+    .portfolio-img img {
+    /*  border: 0.25em solid #f15b61;*/
+      -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+         
+    }
+     
+
+    .portfolio-img img:hover {
+        -webkit-filter: none; /* Safari 6.0 - 9.0 */
+        filter: none;
+  /*  border: 0.25em solid #f89d66;*/
+    }
+
+    .view {
+        float: right;
+        position: absolute;
+        right: 4em;
+    }
+
+    .view p {
+        font-size: 0.5em;
+        
+    }
+
+    .view a {
+        color: #f15b61;
+    }
+
+
+    .view a:hover {
+        color: #f89d66;
+    }
+
+
+    .fp-wrap {
+        width: 90%;
+        margin: 5em auto;
+    }
+
+    .intro {
+         padding-top: 2.5%;
+         border-bottom: none; /*remove border from mobile view */
+    }
+
+    p span {
+        color: #f15b61;
+        font-weight: bolder;
+    }
+
+    .fp-wrap .intro {
+      border-right: solid 5px #f15b61;   
+      padding: 0 35px 0 5px;
+      width: 40%;
+      float: left;
+      text-align: justify;
+    }
+
+    .highlighted-project {
+    float: right;
+    margin: auto;
+    width: 45%;
+    padding: 0 25px;
+    }
+
+    
+    
+
+    /* for the work page */
+    .project-img {
+      float: left;
+      max-width: 45%;
+    }
+
+
+    .pastprojects h2, .pastprojects h5 {
+        text-align: left;
+    }
+
+    .project-summary {
+      float: right;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      max-width: 45%
+    }
+
+    footer {
+        margin-top: 5em;
+    }
+
+}
+
+/* ===== == = === 68.75em (1100px) === = == ===== */
+
+@media only screen and (min-width : 68.75em) {
+    #logo {
+        width: 7.5em;
+    }
+  
+}
+
+/* ===== == = === 81.25em (1300px) === = == ===== */
+
+@media only screen and (min-width : 81.25em) {
+
+
+}
+
+
+
+
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after,
+    *:first-letter,
+    *:first-line {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
