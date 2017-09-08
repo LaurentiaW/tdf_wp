@@ -25,45 +25,45 @@
  * @since The Digital Factory 1.0
  */
 
-/*
+
 // custom post types function
 function create_custom_post_types() {
 
 	//create a case study custom post type 
 	register_post_type (
-		'case_studies',
+		'skills',
 		array(
 			'labels' => array(
-				'name' => __( 'Case Studies' ),
-				'singular_name' => __('Case Study')
+				'name' => __( 'Skills' ),
+				'singular_name' => __('Skill')
 				),
 			'public' => true,
 			'has_archive' => true,
 			'rewrite' => array(
-				'slug' => 'case-studies'
+				'slug' => 'skills'
 				),
 			)
 		);
 
 	//create a awards custom post type 
 	register_post_type (
-		'awards',
+		'projects',
 		array(
 			'labels' => array(
-				'name' => __( 'Awards' ),
-				'singular_name' => __('Award')
+				'name' => __( 'Projects' ),
+				'singular_name' => __('Project')
 				),
 			'public' => true,
 			'has_archive' => true,
 			'rewrite' => array(
-				'slug' => 'awards'
+				'slug' => 'projects'
 				),
 			)
 		);
 }
 
 add_action ('init', 'create_custom_post_types' );
-
+/*
 function modify_attachment_link($markup) {
     return preg_replace('/^<a([^>]+)>(.*)$/', '<a\\1 target="_blank">\\2', $markup);
 }

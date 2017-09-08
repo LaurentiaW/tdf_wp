@@ -10,3 +10,41 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: The Digital Factory
 */
 
+
+
+/*=====single skill page ====*/
+
+.indv-skill {
+	padding: 3em 1em;
+}
+
+aside  {
+	float: left;
+    width: 33%;
+ }
+
+article .skill-content  {
+	float: right;
+	width: 60%
+}
+.indv-skill img {
+        border-radius: 50%;
+        border: 0.25em solid #f15b61;
+    }
+
+.cta {
+	margin: auto;
+    width: 90%;
+    max-width: 1300px;
+    text-align: center;
+}
+
+
+/* ===== past projects ===== */
+.project-img {
+	margin-right: 2em;
+}
+
+.project-type h5 span {
+	text-decoration: underline;
+}

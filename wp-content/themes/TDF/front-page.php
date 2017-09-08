@@ -22,70 +22,57 @@
             </section>
 
             <section class="capabilities group">
+                 <?php query_posts('posts_per_page=3&post_type=skills'); ?>
+                        <?php while ( have_posts() ) : the_post(); 
+                            $img = get_field ( 'img');
+                            $size = "medium";
+                            ?>
                 <div class="skill group">
+               
+
                         <figure class=cap-img>
-                           <a href="<?php echo home_url(); ?>/about">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/development.jpg" alt="Web development is one of The Digital Factory's core capabilities">
+                           <a href="<?php the_permalink (); ?>">
+                                <?php  if($img ) { 
+                                        echo wp_get_attachment_image ($img, $size);
+                                } ?>  
                             </a>
                         </figure>
                         
-                        <a href="<?php echo home_url(); ?>/about"><h3 id=development>Development</h3></a>
+                        <a href="<?php the_permalink (); ?>"><h3><?php the_title(); ?></h3></a>
+                        
                     </div>
 
-                    <div  class="skill group">
-                        <figure class=cap-img>
-                           <a href="<?php echo home_url(); ?>/about">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/design.jpg" alt="Visual Design is one of The Digital Factory's core capabilities">
-                            </a>
-                        </figure>
-                        
-                        <a href="<?php echo home_url(); ?>/about"><h3 id=design>Design</h3></a>
-                    </div>
-
-                    <div class="skill group">
-                       
-                         <figure class=cap-img>
-                           <a href="<?php echo home_url(); ?>/about">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cms.jpg" alt="Content Management is one of The Digital Factory's core capabilities">
-                            </a>
-                        </figure>
-                        
-                        <a href="<?php echo home_url(); ?>/about"><h3 id=marketing>WordPress</h3></a>
-                    </div>
+                    <?php endwhile; ?> 
+                    <?php wp_reset_query(); ?>
+                    
                 </section> <!--end capabiliites section-->
         </div> <!--close wrapper for blue-grey background -->
 
 
             <section class="credentials">
                 <div class="projects">
-                    <h6>Want a <span> peak</span> of our capabilities - have a look at some of our <a href="<?php echo home_url(); ?>/work">past projects</a> </h6>
-
+                    <h6>Want a <a href="<?php echo home_url(); ?>/work"><span> peak</span></a> of our capabilities - have a look at some of our <a href="<?php echo home_url(); ?>/work">past projects</a> </h6>
+                    <?php query_posts('posts_per_page=4&post_type=projects'); ?>
+                        <?php while ( have_posts() ) : the_post(); 
+                            $img = get_field('img');
+                            $size = "medium";
+                            ?>
                     <div class="featured-projects">
 
                         <div class="group">
                             <div class="portfolio">
                                 <figure class="portfolio-img">
-                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img-tdf.png" alt="">
+                                    <a href="<?php the_permalink (); ?>">
+                                      <?php  if($img ) { 
+                                        echo wp_get_attachment_image ($img, $size);
+                                        } ?>   
+                                    </a>
                                 </figure>
                             </div> <!--1st project -->
 
-                            <div class="portfolio">
-                                <figure class="portfolio-img">
-                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img-tdf.png" alt="">
-                                </figure> 
-                            </div><!--2nd project -->
-
-                            <div class="portfolio">
-                                <figure class="portfolio-img">
-                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img-tdf.png" alt="">
-                                </figure>
-                            </div><!--3rd project -->
-
-                            <div class="portfolio">
-                                <figure class="portfolio-img">
-                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img-tdf.png" alt="">
-                                </figure> 
-                            </div><!--4th project -->
+                            
+                    <?php endwhile; ?> 
+                    <?php wp_reset_query(); ?>
                         </div>
 
                         <p class="view">click <a href="<?php echo home_url(); ?>/work">here</a> to view more....</p>
@@ -99,21 +86,30 @@
                 </section>
                 <article class="highlighted-project">
                     <div class="highlighted-project-text">
+                        <?php query_posts('posts_per_page=1&post_type=projects'); ?>
+                        <?php while ( have_posts() ) : the_post(); 
+                            $project_scope = get_field ( 'project_scope');
+                            $img = get_field('img');
+                            $size = "medium";
+                            ?>
                         <h3>tdf's latest project</h3>
-                        <h6><span>Project type:</span><br> Design/Development/CMS</h6>
+                        <h6><span>Project type:</span><br> <?php echo $project_scope; ?></h6>
                         <h6><span>Project Description</span></h6>
-                        <p>Text descriping the project</p>
+                        <p><?php the_excerpt(); ?></p>
                     </div>
                     <div class="highlighted-project-img">
                         <figure>
-                            <a href="<?php echo home_url(); ?>/work">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img-tdf.png">
+                            <a href="<?php the_permalink (); ?>">
+                                <?php  if($img ) { 
+                                        echo wp_get_attachment_image ($img, $size);
+                                } ?>  
                             </a>
                         </figure>
                     </div>
                 </article>
             </div>
-            
-            <div class="clearfix"></div>
+        <?php endwhile; ?> 
+    <?php wp_reset_query(); ?>
+    <div class="clearfix"></div>
 
 <?php get_footer(); ?>
