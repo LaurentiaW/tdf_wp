@@ -25,7 +25,7 @@
  * @since The Digital Factory 1.0
  */
 
-
+/*
 // custom post types function
 function create_custom_post_types() {
 
@@ -60,134 +60,6 @@ function create_custom_post_types() {
 				),
 			)
 		);
-
-		//create a press releases custom post type 
-	register_post_type (
-		'press_releases',
-		array(
-			'labels' => array(
-				'name' => __( 'Press Releases' ),
-				'singular_name' => __('Press Release')
-				),
-			'public' => true,
-			'has_archive' => true,
-			'rewrite' => array(
-				'slug' => 'press-releases'
-				),
-			)
-		);
-
-	//create a press clippings custom post type 
-	register_post_type (
-		'press_clip',
-		array(
-			'labels' => array(
-				'name' => __( 'Press Clippings' ),
-				'singular_name' => __('Press Clipping')
-				),
-			'public' => true,
-			'has_archive' => true,
-			'rewrite' => array(
-				'slug' => 'press-clippings'
-				),
-			)
-		);
-
-	//create a pumping system custom post type 
-	register_post_type (
-		'pump_systems',
-		array(
-			'labels' => array(
-				'name' => __( 'Pump Systems' ),
-				'singular_name' => __('Pump System')
-				),
-			'public' => true,
-			'has_archive' => true,
-			'rewrite' => array(
-				'slug' => 'pump-systems'
-				),
-			)
-		);
-
-	//create a hippo submersible slurry pump range custom post type 
-	register_post_type (
-		'submersibles',
-		array(
-			'labels' => array(
-				'name' => __( 'Submersible Slurry Pumps' ),
-				'singular_name' => __('Submersible Slurry Pump')
-				),
-			'public' => true,
-			'has_archive' => true,
-			'rewrite' => array(
-				'slug' => 'hippo-submersible-slurry-pump-range'
-				),
-			)
-		);
-
-	//create a hippo vertical slurry pump range custom post type 
-	register_post_type (
-		'verticals',
-		array(
-			'labels' => array(
-				'name' => __( 'Vertical Slurry Pumps' ),
-				'singular_name' => __('Vertical Slurry Pump')
-				),
-			'public' => true,
-			'has_archive' => true,
-			'rewrite' => array(
-				'slug' => 'hippo-vertical-slurry-pump-range'
-				),
-			)
-		);
-
-	//create a hippo vertical slurry pump range custom post type 
-	register_post_type (
-		'hippo',
-		array(
-			'labels' => array(
-				'name' => __( 'Hippo Slurry Pump Range' ),
-				'singular_name' => __('Hippo Slurry Pump Range')
-				),
-			'public' => true,
-			'has_archive' => true,
-			'rewrite' => array(
-				'slug' => 'hippo-range'
-				),
-			)
-		);
-
-	//create a pump curves custom post type 
-	register_post_type (
-		'pump_curves',
-		array(
-			'labels' => array(
-				'name' => __( 'Pump Curves' ),
-				'singular_name' => __('Pump Curves')
-				),
-			'public' => true,
-			'has_archive' => true,
-			'rewrite' => array(
-				'slug' => 'pump-curves'
-				),
-			)
-		);
-	
-	//create a hippo lineup - frontpage custom post type 
-	register_post_type (
-		'pump_img',
-		array(
-			'labels' => array(
-				'name' => __( 'Pump Image' ),
-				'singular_name' => __('Pump Images')
-				),
-			'public' => true,
-			'has_archive' => true,
-			'rewrite' => array(
-				'slug' => 'pump-img'
-				),
-			)
-		);
 }
 
 add_action ('init', 'create_custom_post_types' );
@@ -202,11 +74,11 @@ function custom_excerpt_more($more) {
 	return '...<div class="read-more"><a href="'. get_permalink() . '"></a></div>';
 } 
 add_filter('excerpt_more', 'custom_excerpt_more');
-
+*/
 
 add_theme_support ( 'menus');
 
-function hippo2018_register_theme_menus() {
+function tdf_register_theme_menus() {
 
 	register_nav_menus (
 		
@@ -217,58 +89,32 @@ function hippo2018_register_theme_menus() {
 		);
 }
 
-add_action('init', 'hippo2018_register_theme_menus');
+add_action('init', 'tdf_register_theme_menus');
 
-// Register Custom Navigation Walker
-require_once('wp-bootstrap-navwalker.php');
 
-	function hippo2018_theme_styles () {
+	function tdf_theme_styles () {
 		wp_enqueue_style ('normalize_css', get_template_directory_uri() . '/assets/css/normalize.css' );
 
-		wp_enqueue_style ('font_awesome_css', get_template_directory_uri() . '/assets/css/font-awesome.min.css' );
-
-		wp_enqueue_style ('bootstrap_css', get_template_directory_uri() . '/assets/css/bootstrap.css' );
-
-		wp_enqueue_style ('waves_css', get_template_directory_uri() . '/assets/css/waves.min.css' );
-
-		wp_enqueue_style ('slicknav_css', get_template_directory_uri() . '/assets/css/slicknav.min.css' );
-
-		wp_enqueue_style ('owl_carousel_css', get_template_directory_uri() . '/assets/css/owl.carousel.min.css' );
-
-		wp_enqueue_style ('owl_theme_default_css', get_template_directory_uri() . '/assets/css/owl.theme.default.css' );
-
-		wp_enqueue_style ('essential_css', get_template_directory_uri() . '/assets/css/essential.css' );
+		wp_enqueue_style ('csshake_slow_css', get_template_directory_uri() . '/assets/css/csshake-slow.min.css' );
 
 		wp_enqueue_style ('main_css', get_template_directory_uri() . '/assets/css/main.css' );
 
-		wp_enqueue_style ('responsive_css', get_template_directory_uri() . '/assets/css/responsive.css' );
+		wp_enqueue_style ('stylesheet_css', get_template_directory_uri() . '/assets/css/stylesheet.css' );
 
 		wp_enqueue_style ('style_css', get_template_directory_uri() . '/style.css' );
 
 	}
 
-	add_action ( 'wp_enqueue_scripts', 'hippo2018_theme_styles' );
+	add_action ( 'wp_enqueue_scripts', 'tdf_theme_styles' );
 
-	function hippo2018_theme_js() {
+	function tdf_theme_js() {
 
 		wp_enqueue_script ( 'modernizr_js', get_template_directory_uri() . '/assets/js/vendor/modernizr-2.8.3.min.js');
-
-		wp_enqueue_script ( 'bootstrap_js', get_template_directory_uri() . '/assets/js/bootstrap.js');
-
-		wp_enqueue_script ( 'waves_js', get_template_directory_uri() . '/assets/js/waves.min.js');
-
-		wp_enqueue_script ( 'slicknav_js', get_template_directory_uri() . '/assets/js/jquery.slicknav.min.js');
-
-		wp_enqueue_script ( 'waypoints_js', get_template_directory_uri() . '/assets/js/waypoints.min.js');
-	
-		wp_enqueue_script ( 'isotope_js', get_template_directory_uri() . '/assets/js/isotope.min.js');
-
-		wp_enqueue_script ( 'owl_carousel_js', get_template_directory_uri() . '/assets/js/owl.carousel.min.js');
 
 		wp_enqueue_script ( 'main_js', get_template_directory_uri() . '/assets/js/main.js');
 	}
 
-add_action ( 'wp_enqueue_scripts', 'hippo2018_theme_js');
+add_action ( 'wp_enqueue_scripts', 'tdf_theme_js');
 
 ?>
 
