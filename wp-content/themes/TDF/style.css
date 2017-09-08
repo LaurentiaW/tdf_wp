@@ -48,3 +48,14 @@ article .skill-content  {
 .project-type h5 span {
 	text-decoration: underline;
 }
+
+/* ===== about page ====== */
+
+.about {
+	width: 90%;
+    margin: auto;
+}
+.wrapper h2 {
+	color: #fff;
+	padding: 2em 0;
+}

@@ -30,8 +30,9 @@
                     <p><?php the_content();?></p>
                 </article>
             </section>
-                <h3>The Digital Factory's core capabilities are:</h3>
+                
                 <div class="wrapper">
+                    <h2 class="about">The Digital Factory's core capabilities are:</h3>
                     <section class="capabilities group">
                             <?php query_posts('posts_per_page=3&post_type=skills'); ?>
                                 <?php while ( have_posts() ) : the_post(); 
