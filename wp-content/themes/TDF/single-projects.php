@@ -14,6 +14,7 @@
                 <?php if ( have_posts() ) : while ( have_posts() ): the_post(); 
 
                     $project_scope = get_field ( 'project_scope');
+                    $link = get_field('site_link');
                     $img = get_field('img');
                     $img2 = get_field('img2');
                     $img3 = get_field('img3');
@@ -33,6 +34,9 @@
                         echo wp_get_attachment_image( $img, $size );
                             } ?>
                     </figure>
+                    <?php if ($link) { ?>
+                    <p><strong><a href="<?php echo $link ; ?>">View Project &gt;</a></strong></p>
+                    <?php } ?>
                     <p class="project-summary"><?php the_content();?></p>
                 </article>
 

@@ -95,7 +95,7 @@
                         <h3>tdf's latest project</h3>
                         <h6><span>Project type:</span><br> <?php echo $project_scope; ?></h6>
                         <h6><span>Project Description</span></h6>
-                        <p><?php the_excerpt(); ?></p>
+                        <p><?php echo get_excerpt(); ?></p>
                     </div>
                     <div class="highlighted-project-img">
                         <figure>

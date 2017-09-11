@@ -14,43 +14,44 @@
 
         get_header(); ?>
 
-			<div class="container">
-				<div class="row">
-                    <div class="col-md-12">
-                        <div class="section-title">
-                            <h1>Our awards</h1>
-                        </div>
-                    </div>
-                </div>
-				<table class="case-studies">
-                    <tr>
-                        <th>Award</th>
-                        <th>Awarded by</th>
-                        <th>Category</th>
-                        <th>Date</th>
-                    </tr>
-                    <?php while ( have_posts() ) : the_post();
-                    $awarded_by = get_field ( 'awarded_by');
-                    $category = get_field ( 'category' );
-                    $certificate = get_field ( 'certificate');
-                    $date = get_field ( 'date');
-             ?>
-                    <tr>
-                        <td><a href="<?php the_permalink (); ?>"><?php the_title(); ?></a></td>
-                        <td><a href="<?php the_permalink (); ?>"><?php echo $awarded_by; ?></a></td>
-                        <td><a href="<?php the_permalink (); ?>"><?php echo $category; ?></a></td>
-                        <td><a href="<?php the_permalink (); ?>"><?php echo $date; ?></a></td>
-                    </tr>   
-                    <?php endwhile; // end of the loop. ?>              
-                </table>
-
-            
+			 <div class="wrapper">
+                <section class="hero-area">
+                    <h1>Celebrat<span>i</span>ng each m<span>i</span>lest<span>o</span>ne!</h1>
+                </section>
             </div>
-            
-            
+            <?php while ( have_posts() ) : the_post(); ?>
+            <section class="pastprojects">
+                <p class="intro"><?php the_content();?></p>
 
-            <div class="ws-50">
+                <hr>
+
+                <section class="work-credentials">
+                    <?php query_posts('post_type=projects'); ?>
+                        <?php while ( have_posts() ) : the_post();
+                            $project_scope = get_field ('project_scope'); 
+                            $img = get_field ( 'img');
+                            $size = "medium";
+                            ?>
                 
-            </div>
+                            <article class="project clearfix">
+                                <h2 class="project-name"><a href="<?php the_permalink (); ?>"><?php the_title();?></a></h2>
+                                <h5 class="project-type"><a href="<?php the_permalink (); ?>"><?php echo $project_scope; ?></a></h5>
+                                <figure class="project-img"><a href="<?php the_permalink (); ?>">
+                                         <?php  if($img ) { 
+                                            echo wp_get_attachment_image ($img, $size);
+                                        } ?>
+                                        </a>  
+                                </figure>
+                                <p class="project-summary"><?php echo get_excerpt(); ?></p>
+                            </article>
+                            <hr>
+                        <?php endwhile; ?> 
+                    <?php wp_reset_query(); ?>
+
+      
+          
+        <?php endwhile;?>
+
+                
 
 <?php get_footer(); ?>

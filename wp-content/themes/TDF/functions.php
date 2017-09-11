@@ -69,27 +69,74 @@ function modify_attachment_link($markup) {
 }
 add_filter( 'wp_get_attachment_link', 'modify_attachment_link', 10, 6 );
 
-
-function custom_excerpt_more($more) {
-	return '...<div class="read-more"><a href="'. get_permalink() . '"></a></div>';
-} 
-add_filter('excerpt_more', 'custom_excerpt_more');
 */
 
-add_theme_support ( 'menus');
+/*
+// Changes excerpt symbol
+function custom_excerpt_more($more) {
+	return '<div class="read-more"><a href="'. get_permalink() . '"><span>...</span></a></div>';
+}
+add_filter('excerpt_more', 'custom_excerpt_more');
 
-function tdf_register_theme_menus() {
 
-	register_nav_menus (
-		
-		array(
-			'primary-menu' => __( 'primary menu' ),
-			)
 
-		);
+/**
+ * Filter the except length to 20 words.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ 
+function wpdocs_custom_excerpt_length( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+*/
+
+//Limiting Excerpt Length To Number of Characters
+function get_excerpt(){
+$excerpt = get_the_content();
+$excerpt = preg_replace(" ([.*?])",'',$excerpt);
+$excerpt = strip_shortcodes($excerpt);
+$excerpt = strip_tags($excerpt);
+$excerpt = substr($excerpt, 0, 100);
+$excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+$excerpt = $excerpt.'<a href="'.get_permalink().'">...</a>';
+return $excerpt;
 }
 
-add_action('init', 'tdf_register_theme_menus');
+
+//Then call your function echo get_excerpt(); where needed in doc
+
+
+
+
+// Theme support for post-thumbnails and menus
+function tdf_setup() {
+
+	// Post thumbnails support
+	add_theme_support('post-thumbnails');
+
+	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support( 'title-tag' );
+
+	// Register Menus
+	register_nav_menus ( array (
+		'primary-menu' => __( 'Primary Menu', 'tdf' ),
+	) );
+}
+add_action( 'after_setup_theme', 'tdf_setup' );
+
+
+
+
+
+
+
 
 
 	function tdf_theme_styles () {
