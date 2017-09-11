@@ -9,12 +9,21 @@
 
 
         get_header(); ?>
-
-        <div class="wrapper group"> 
-                <?php if ( have_posts() ) : while ( have_posts() ): the_post(); 
+        <?php if ( have_posts() ) : while ( have_posts() ): the_post(); 
 
                     $img = get_field ( 'img');
                     $size = "full"; ?>
+        
+       
+        <ul class="breadcrumb">
+            <li><a href="<?php echo home_url(); ?>">home</a></li>
+            <li><a href="<?php echo home_url(); ?>/about">about</a></li>
+            <li><?php the_title();?></li>
+        </ul>
+
+
+        <div class="wrapper group"> 
+                
         
      
             <section class="hero-area">

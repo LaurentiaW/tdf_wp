@@ -9,9 +9,7 @@
 
 
         get_header(); ?>
-
-            <div class="wrapper group"> 
-                <?php if ( have_posts() ) : while ( have_posts() ): the_post(); 
+        <?php if ( have_posts() ) : while ( have_posts() ): the_post(); 
 
                     $project_scope = get_field ( 'project_scope');
                     $link = get_field('site_link');
@@ -19,6 +17,15 @@
                     $img2 = get_field('img2');
                     $img3 = get_field('img3');
                     $size = "full"; ?>
+
+          <ul class="breadcrumb">
+            <li><a href="<?php echo home_url(); ?>">home</a></li>
+            <li><a href="<?php echo home_url(); ?>/work">work</a></li>
+            <li><?php the_title();?></li>
+        </ul>
+
+            <div class="wrapper group"> 
+             
 
                 <section class="hero-area">
                     <h1><?php the_title();?></h1>

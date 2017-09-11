@@ -434,7 +434,7 @@ zoom: 1; /* IE6&7 */
 
     .project {
       border: 1px #ccc;
-      padding: 0.2em;
+      padding: 1em 0 2.5em;
     }
 
     .pastprojects .intro {
@@ -480,6 +480,43 @@ zoom: 1; /* IE6&7 */
       padding: 1%;
       background-color: white;
     }
+
+    /*   Contact page */
+    .post-thumbnail{
+        display: none;
+    }
+    /* Name field */
+    #ninja_forms_field_1_div_wrap,
+     #ninja_forms_field_1 {
+     width: 80%;
+     min-width: 150px;
+     margin: 0 15px 40px 0; 
+     }
+
+     /* Email field */
+     #ninja_forms_field_2_div_wrap,
+     #ninja_forms_field_2{
+     width: 80%;
+     min-width: 150px;
+    margin: 0 15px 40px 0; 
+     }
+     
+     
+     /* Message field */
+     #ninja_forms_field_3_div_wrap,
+     #ninja_forms_field_3{
+     width: 90%;
+     min-width: 240px;
+     margin: 0 15px 0 0; 
+     }
+     
+     /* Send button field */
+     #ninja_forms_field_4_div_wrap,
+     #ninja_forms_field_4{
+     width: 90%;
+     min-width: 240px;
+     margin: 0 15px 0 0; 
+     }
 
 /* ==========================================================================
    Helper classes
@@ -668,6 +705,48 @@ zoom: 1; /* IE6&7 */
         padding-top: 2.5em;
         margin-left: 2em;
     }
+
+
+    /* CONTACT PAGE */
+    .post-thumbnail{
+        display: initial;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    /* Name field */
+    #ninja_forms_field_1_div_wrap,
+     #ninja_forms_field_1 {
+     width: 43%;
+     min-width: 150px;
+     float: left;
+     margin: 0 15px 40px 0; 
+     }
+     
+     /* Email field */
+     #ninja_forms_field_2_div_wrap,
+     #ninja_forms_field_2{
+     width: 43%;
+     min-width: 150px;
+     float: left;
+     margin: 0 15px 40px 0; 
+     }
+     
+     /* Message field */
+     #ninja_forms_field_3_div_wrap,
+     #ninja_forms_field_3{
+     width: 90%;
+     min-width: 240px;
+     margin: 0 15px 0 0; 
+     }
+     
+     /* Send button field */
+     #ninja_forms_field_4_div_wrap,
+     #ninja_forms_field_4{
+     width: 90%;
+     min-width: 240px;
+     margin: 0 15px 0 0; 
+     }
 }
 
 /* ===== == = === 48em (768px) === = == ===== */
@@ -717,6 +796,52 @@ next to each other rather than stack*/
       float: left;
       padding: 15px;
     }
+    
+    .post-thumbnail {
+    float: left;
+    width: 30%;
+    padding: 3.125em 3.125em 0 0;
+    }
+
+    .nf-form-cont {
+    width:55%;
+    margin: 0 auto;
+    float: left;
+    }
+    /* Name field */
+    #ninja_forms_field_1_div_wrap,
+     #ninja_forms_field_1 {
+     width: 40%;
+     min-width: 110px;
+     float: left;
+     margin: 0 5px; 
+     }
+
+     /* Email field */
+     #ninja_forms_field_2_div_wrap,
+     #ninja_forms_field_2{
+     width: 40%;
+     min-width: 110px;
+     float: left;
+     margin: 0 15px; 
+     }
+     
+      
+     /* Message field */
+     #ninja_forms_field_3_div_wrap,
+     #ninja_forms_field_3{
+     width: 90%;
+     min-width: 110px;
+     margin: 5px;
+     }
+     
+     /* Send button field */
+     #ninja_forms_field_4_div_wrap,
+     #ninja_forms_field_4{
+     width: 110px; 
+     margin: -10px 5px 0 0; 
+     padding: 15px;
+     }
 }
 /* ===== == = === 56.25em (900px) === = == ===== */
 /* at this breakpoint past projects are now visible */

@@ -23,10 +23,10 @@
                              
             </div>
             <section class="about">
-                <figure>
-                    
-                </figure>
-                <article>
+                 <article class="group">
+                    <figure class="profile-img">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/profile-img.jpg" alt="fun profile img" />
+                    </figure>
                     <p><?php the_content();?></p>
                 </article>
             </section>

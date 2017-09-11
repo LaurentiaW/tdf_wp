@@ -23,7 +23,11 @@
                     <h1><?php the_title(); ?></h1>
                   </div>
             </div>
-            <div class="content">
+            <div class="content group">
+                <figure class="post-thumbnail">
+                     <?php the_post_thumbnail(); ?>
+                </figure>
+               
                 <p><?php the_content(); ?></p>
             
                 <?php endwhile; else: ?>
