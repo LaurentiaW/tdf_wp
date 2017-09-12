@@ -63,34 +63,7 @@ function create_custom_post_types() {
 }
 
 add_action ('init', 'create_custom_post_types' );
-/*
-function modify_attachment_link($markup) {
-    return preg_replace('/^<a([^>]+)>(.*)$/', '<a\\1 target="_blank">\\2', $markup);
-}
-add_filter( 'wp_get_attachment_link', 'modify_attachment_link', 10, 6 );
 
-*/
-
-/*
-// Changes excerpt symbol
-function custom_excerpt_more($more) {
-	return '<div class="read-more"><a href="'. get_permalink() . '"><span>...</span></a></div>';
-}
-add_filter('excerpt_more', 'custom_excerpt_more');
-
-
-
-/**
- * Filter the except length to 20 words.
- *
- * @param int $length Excerpt length.
- * @return int (Maybe) modified excerpt length.
- 
-function wpdocs_custom_excerpt_length( $length ) {
-    return 20;
-}
-add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
-*/
 
 //Limiting Excerpt Length To Number of Characters
 function get_excerpt(){
@@ -103,8 +76,6 @@ $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
 $excerpt = $excerpt.'<a href="'.get_permalink().'">...</a>';
 return $excerpt;
 }
-
-
 //Then call your function echo get_excerpt(); where needed in doc
 
 

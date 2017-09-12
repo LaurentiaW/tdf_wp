@@ -24,6 +24,7 @@
                 <p class="intro"><?php the_content();?></p>
 
                 <hr>
+            </section>
 
                 <section class="work-credentials">
                     <?php query_posts('post_type=projects'); ?>
@@ -42,8 +43,10 @@
                                         } ?>
                                         </a>  
                                 </figure>
-                                <p class="project-summary"><?php echo get_excerpt(); ?></p>
+                                <p class="project-summary"><?php the_content(); ?></p>
+
                             </article>
+                            <hr>
                         <?php endwhile; ?> 
                     <?php wp_reset_query(); ?>
 
@@ -52,9 +55,8 @@
         <?php endwhile;?>
         </section>
         <section class="cta">
-            <hr>
-            <h3>Curious about how The Digital Factory can assist you on your next web project? Complete the quote form for a proposal.</h3>   
-            <a href="<?php echo home_url(); ?>/proposal" class="btn">Give me a proposal!</a>
+             <h3>Curious about how The Digital Factory can assist you on your next web project? Complete the quote form for a proposal.</h3>   
+            <a href="<?php echo home_url(); ?>/quote" class="btn">Give me a proposal!</a>
         </section>
 
                 

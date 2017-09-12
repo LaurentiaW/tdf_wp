@@ -105,7 +105,7 @@
                     <section class="cta">
                         <hr>
                         <h3>Curious about how The Digital Factory can assist you on your next web project? Complete the quote form for a proposal.</h3>   
-                        <a href="<?php echo home_url(); ?>/proposal" class="btn">Give me a proposal!</a>
+                        <a href="<?php echo home_url(); ?>/quote" class="btn">Give me a proposal!</a>
                     </section>
                     
 
