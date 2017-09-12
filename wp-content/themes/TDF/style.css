@@ -129,7 +129,7 @@ article .skill-content  {
 	margin:0 auto;
 }
 
-#nf-field-4 {
+#nf-field-4,  #nf-field-26  {
 	 	background-color: #272838;
         border: none;
         color: #fff;
@@ -142,6 +142,11 @@ article .skill-content  {
         display: block;
         margin:2.5em auto;
 }
+
+ #nf-field-26 {
+ 	width: 40%;
+ }
+
  .ninja-forms-req-symbol {
   visibility: hidden;
 }
@@ -150,6 +155,9 @@ article .skill-content  {
   visibility: hidden;
 }
 
+.content img {
+border-radius: 15px
+}
 
 .packages {
 	width: 90%;

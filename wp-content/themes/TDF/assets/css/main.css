@@ -727,12 +727,7 @@ zoom: 1; /* IE6&7 */
   
 
     /* CONTACT PAGE */
-    .post-thumbnail{
-        display: initial;
-        width: 100%;
-        margin: 0 auto;
-    }
-
+ 
     /* Name field */
     #ninja_forms_field_1_div_wrap,
      #ninja_forms_field_1 {
@@ -815,8 +810,9 @@ next to each other rather than stack*/
     }
     
     .post-thumbnail {
+    display: initial;
     float: left;
-    width: 30%;
+    width: 25%;
     padding: 3.125em 3.125em 0 0;
     }
 

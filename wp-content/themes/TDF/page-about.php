@@ -86,7 +86,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><h5>Development Packages</h5>
+                            <li><h5>Development Package</h5>
                                 <ul>
                                     <li>Develop website from design composition (Homepage/Front-page, About, Work, Blog &amp; Contact page)</li>
                                     <li>Mobile/responsive (based on design provided)</li> 
