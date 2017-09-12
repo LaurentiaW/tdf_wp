@@ -29,21 +29,22 @@
                     </figure>
                     <p><?php the_content();?></p>
                 </article>
+                <hr>
             </section>
                 
-                <div class="wrapper">
+                <div class="content">
                     <h2 class="about">The Digital Factory's core capabilities are:</h2>
-                    <section class="capabilities group">
+                    <section class="about group">
                             <?php query_posts('posts_per_page=3&post_type=skills'); ?>
                                 <?php while ( have_posts() ) : the_post(); 
-                                    $img = get_field ( 'img');
+                                    $icon = get_field ( 'icon');
                                     $size = "medium";
                                     ?>
-                                    <div class="skill group">
-                                        <figure class=cap-img>
+                                    <div class="cap-about group">
+                                        <figure class=about-img>
                                             <a href="<?php the_permalink (); ?>">
-                                                <?php  if($img ) { 
-                                                    echo wp_get_attachment_image ($img, $size);
+                                                <?php  if($icon ) { 
+                                                    echo wp_get_attachment_image ($icon, $size);
                                                 } ?>  
                                             </a>
                                         </figure>
@@ -55,15 +56,16 @@
                                 <?php endwhile; ?> 
                             <?php wp_reset_query(); ?>
                     </section>
+                     <hr>
                 </div>
                 <section class="packages">
-                        <h3>How The Digital Work</h3>
-                        <p>To make it easier for clients to know what to expect The Digital Factory Web design and Development Packages</p>
+                        <h3>The Digital Factory Packages</h3>
+                        <p>Need a new website or transform your current website into a content management system. Listed below is The Digital Factory's packages. This should give you an indication of the prices and time frame required to produce and deliver your project. Please note these are all indications time frames cost vary from project to project depending on your project's requirements. </p>
                         
                         <ol>
-                            <li class="packages-headings">Wordpress Packages
+                            <li><h5>Wordpress Packages</h5>
                                 <ul>
-                                    <li>Wordpress Packages - CMS (Content Management System)
+                                    <li><h6>Wordpress Packages - CMS (Content Management System)</h6>
                                         <ul>
                                             <li>Basic WordPress website with client provided design
                                             25 hrs implement &amp; test custom WordPress theme using placeholder content</li>
@@ -72,7 +74,7 @@
                                             <li>Total 40 hrs of work <strong>&euro;2000</strong> </li>
                                         </ul>
                                     </li>
-                                    <li>A basic WordPress without a design
+                                    <li><h6>A basic WordPress without a design</h6>
                                         <ul>
                                             <li>30 hrs to design the site (frontpage/homepage, about, work, blog,contact)</li>
                                             <li>10 hrs for design revisions</li>
@@ -84,14 +86,14 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li>Development Packages
+                            <li><h5>Development Packages</h5>
                                 <ul>
                                     <li>Develop website from design composition (Homepage/Front-page, About, Work, Blog &amp; Contact page)</li>
                                     <li>Mobile/responsive (based on design provided)</li> 
                                     <li>Optimizing images Development 20 hrs, Production 5 hrs, Revisions 2 hrs Total 25 hrs <strong>&euro;1250</strong></li>
                                 </ul>
                             </li>
-                            <li>Web layout design composition Package
+                            <li><h5>Web layout design composition Package</h5>
                                 <ul>
                                     <li>Create a website layout design composition based on storyboards, user journeys, and wireframing </li>
                                     <li>Deliverables include homepage/front-page, about, work, blog, and contact (or comparable to client’s needs) in mobile, tablet and desktop</li>        
@@ -100,7 +102,12 @@
                             </li>
                         </ol>
                     </section>
-
+                    <section class="cta">
+                        <hr>
+                        <h3>Curious about how The Digital Factory can assist you on your next web project? Complete the quote form for a proposal.</h3>   
+                        <a href="<?php echo home_url(); ?>/proposal" class="btn">Give me a proposal!</a>
+                    </section>
+                    
 
         
 

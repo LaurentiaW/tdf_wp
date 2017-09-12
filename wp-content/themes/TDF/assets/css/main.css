@@ -244,11 +244,7 @@ zoom: 1; /* IE6&7 */
         color: #f89d66;
     }
 
-    .cap-img {
-        width: 38%;
-        float:left;
-    }
-
+    
     .capabilities img {
         -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
         filter: grayscale(100%);
@@ -262,6 +258,10 @@ zoom: 1; /* IE6&7 */
         border: 0.25em solid #f89d66;
     }
 
+    .cap-img {
+        width: 38%;
+        float:left;
+    }
     .capabilities h3 {
         color: #fff;
         text-align: center;
@@ -276,6 +276,7 @@ zoom: 1; /* IE6&7 */
         color: #f89d66;
     } 
 
+  
 
     /*credentials */
     .featured-projects {
@@ -481,6 +482,17 @@ zoom: 1; /* IE6&7 */
       background-color: white;
     }
 
+    /*   About page */
+
+        .cap-about {
+        margin: 0 auto;
+        border-bottom: solid 2px #f15b61;
+    }
+
+      .cap-about:last-child {
+      border-bottom: none;
+    }
+
     /*   Contact page */
     .post-thumbnail{
         display: none;
@@ -601,12 +613,7 @@ zoom: 1; /* IE6&7 */
 
 @media only screen and (min-width : 20em) {
 
-    .capabilities h3 {
-    text-indent: 0;
-    line-height: 1.5;
-    float: left;
-    padding-top: 5em;
-}
+   
 
 
 }
@@ -700,12 +707,24 @@ zoom: 1; /* IE6&7 */
         padding-top: 0.75em;
     }
 
-    .capabilities h3 {
-        font-size: 1.75em;
-        padding-top: 2.5em;
-        margin-left: 2em;
+    
+
+
+
+    /* ABOUT PAGE */
+
+  
+      .cap-about{
+        width: 33%;
+        margin: 0 auto;
+        float: left;
+        border-right: solid 2px #f15b61;
     }
 
+    .cap-about {
+      border-bottom: none;
+    }
+  
 
     /* CONTACT PAGE */
     .post-thumbnail{
@@ -754,14 +773,13 @@ zoom: 1; /* IE6&7 */
 next to each other rather than stack*/
 @media only screen and (min-width : 48em) {
 
-
     .skill {
         width: 33%;
         float: left;
     }
 
     .cap-img {
-    width: 15.625em;
+    width: 75%;
     margin: auto;
     }
 
@@ -774,9 +792,8 @@ next to each other rather than stack*/
       padding-top: 0.5em;
     }
 
-    
 
-   
+ 
 
     .btn{
         width: 25%;
@@ -864,7 +881,7 @@ next to each other rather than stack*/
 
 .cap-img {
     float:none;
-    width:  16em;
+    width:  60%;
 }
 
 .projects h6 {

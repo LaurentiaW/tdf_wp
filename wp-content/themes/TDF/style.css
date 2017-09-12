@@ -51,10 +51,18 @@ article .skill-content  {
 
 /* ===== about page ====== */
 
+
+.cap-about:last-child {
+    border-right: none;
+}
+ .cap-about h3 {
+	text-align: center;
+}
+
 .about {
 	width: 90%;
     margin: auto;
-    padding: 2em 0;
+    padding: 0.5em 0;
 }
 .wrapper h2 {
 	color: #fff;
@@ -105,6 +113,15 @@ article .skill-content  {
 	    text-decoration: underline;
 	}
 
+	.packages h5 {
+		font-size: 1.2em;
+	}
+
+	.packages li {
+		font-size: 20px;
+	}
+
+
 /* === contact page ====*/
 
 .content {
@@ -137,6 +154,7 @@ article .skill-content  {
 .packages {
 	width: 90%;
 	margin: auto;
+	padding: 1.5em 0;
 }
 
 
