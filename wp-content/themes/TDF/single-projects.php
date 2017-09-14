@@ -42,7 +42,7 @@
                             } ?>
                     </figure>
                     <?php if ($link) { ?>
-                    <p><strong><a href="<?php echo $link ; ?>">View Project &gt;</a></strong></p>
+                    <p><strong><a href="<?php echo $link ; ?>" target="_blank">View Project &gt;</a></strong></p>
                     <?php } ?>
                     <p class="project-summary"><?php the_content();?></p>
                 </article>

@@ -82,7 +82,7 @@ return $excerpt;
 
 
 // Theme support for post-thumbnails and menus
-function tdf_setup() {
+function tdf_register_theme_menus() {
 
 	// Post thumbnails support
 	add_theme_support('post-thumbnails');
@@ -92,18 +92,17 @@ function tdf_setup() {
 	 * By adding theme support, we declare that this theme does not use a
 	 * hard-coded <title> tag in the document head, and expect WordPress to
 	 * provide it for us.
-	 */
+	 */ 
 	add_theme_support( 'title-tag' );
 
+
+	add_theme_support( 'menus');
 	// Register Menus
 	register_nav_menus ( array (
-		'primary-menu' => __( 'Primary Menu', 'tdf' ),
+		'primary' => __( 'Nav Menu' ),
 	) );
-}
-add_action( 'after_setup_theme', 'tdf_setup' );
-
-
-
+} 
+add_action('init', 'tdf_register_theme_menus');
 
 
 
@@ -134,5 +133,54 @@ add_action( 'after_setup_theme', 'tdf_setup' );
 
 add_action ( 'wp_enqueue_scripts', 'tdf_theme_js');
 
-?>
 
+//Change the WordPress Login Page Logo
+function my_login_logo() { ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {
+        background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo-sq.png);
+		height:150px;
+		width:150px;
+		background-size: 150px 150px;
+		background-repeat: no-repeat;
+        	padding-bottom: 30px;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+/*
+The size of your logo should be no bigger than 80 x 80 pixels (though even this can change with custom CSS). Adjust the above padding-bottom value to the spacing you want between your logo and the login form.
+
+To change the link values so the logo links to your WordPress site, use the following WordPress hooks example; edit it and paste it below the previous in the functions.php:
+*/
+
+function my_login_logo_url() {
+    return home_url();
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_logo_url_title() {
+    return 'Your Site Name and Info';
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
+
+/* more function to customise the admin of the wordpress site */
+// remove administration page header logo
+function remove_admin_logo() {
+	echo '<style>img#header-logo { display: none; }</style>';
+}
+add_action('admin_head', 'remove_admin_logo');
+
+
+// change administration panel footer
+function change_footer_admin() {
+	echo 'For support, please <a href="mailto:hello@thedigitalfactory.nl">email</a> hello@thedigitalfactory.nl';
+}
+add_filter('admin_footer_text', 'change_footer_admin');
+
+/*
+// remove admin bar
+add_filter('show_admin_bar', '__return_false');
+*/

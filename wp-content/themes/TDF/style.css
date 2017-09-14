@@ -14,8 +14,37 @@ Text Domain: The Digital Factory
 
 /*=====single skill page ====*/
 
+
+.skills-descrip {
+	width: 90%;
+	margin: auto;
+	padding: 2.5em 0;
+}
+
+.descr-img{
+	width: 50%;
+	margin: auto;
+}
+
 .indv-skill {
 	padding: 3em 1em;
+}
+
+.description {
+    float: left;
+    width: 45%;
+}
+@media only screen and (min-width: 37.5em) {
+
+.description {
+    float: left;
+    width: 24%;
+} 
+
+}
+.description h3 {
+	text-align: center;
+	height: 2em;
 }
 
 aside  {

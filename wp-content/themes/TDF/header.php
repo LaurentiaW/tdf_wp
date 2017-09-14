@@ -15,8 +15,7 @@
 
 <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width">
-    <title><?php wp_title( '|', true, 'right' ); ?></title>
-    
+    <title><?php wp_title( '|', true, 'right' ); ?><?php bloginfo('name'); ?></title>
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
     <!--[if lt IE 9]>
     <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
@@ -28,6 +27,7 @@
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta name="viewport" content="width=device-width">
         <title><?php wp_title( '|', true, 'right' ); ?></title>
+
         <?php wp_head(); ?>
          <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
           <!--[if lt IE 9]>
@@ -64,10 +64,8 @@
                 <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-sq.png" alt="The Digital Factory Logo" id="sq" /></a><!--this is for desktop-->
                 <a href="<?php echo home_url(); ?>""><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-rec.png"" alt="The Digital Factory Logo" id="rec" /></a><!--this is for mobile-->
             </h1>
-            <nav class="group">
-                <ul class="primary">
-                     <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'primary' ) ); ?>
-                </ul>
+            <nav>
+                <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
             </nav>
         </header>
 
