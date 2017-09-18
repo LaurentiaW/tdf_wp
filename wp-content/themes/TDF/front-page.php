@@ -51,7 +51,7 @@
 
             <section class="credentials">
                 <div class="projects">
-                    <h6>Want a <a href="<?php echo home_url(); ?>/work"><span> peak</span></a> of our capabilities - have a look at some of our <a href="<?php echo home_url(); ?>/work">past projects</a> </h6>
+                    <h6>A sneak <a href="<?php echo home_url(); ?>/work"><span> peak</span></a> at The Digital Factory's <a href="<?php echo home_url(); ?>/work">featured projects </a> </h6>
                     <?php query_posts('posts_per_page=4&post_type=projects'); ?>
                         <?php while ( have_posts() ) : the_post(); 
                             $img = get_field('img');
@@ -92,7 +92,7 @@
                             $img = get_field('img');
                             $size = "medium";
                             ?>
-                        <h3>tdf's latest project</h3>
+                        <h3>The latest project</h3>
                         <h6><span>Project type:</span><br> <?php echo $project_scope; ?></h6>
                         <h6><span>Project Description</span></h6>
                         <p><?php echo get_excerpt(); ?></p>
