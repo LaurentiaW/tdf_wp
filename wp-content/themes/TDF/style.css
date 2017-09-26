@@ -34,6 +34,13 @@ Text Domain: The Digital Factory
     float: left;
     width: 45%;
 }
+
+.description p {
+    text-align: justify;
+    padding: 5px 15px;
+    font-size: 1.1em;
+}
+
 @media only screen and (min-width: 37.5em) {
 
 .description {
@@ -196,3 +203,6 @@ border-radius: 15px
 }
 
 
+footer a {
+	color: #fff;
+}

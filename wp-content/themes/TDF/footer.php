@@ -14,7 +14,7 @@
 		<footer class="group">
             <div class="footer-wrap">
                 <p id="copyright">&copy;The Digital Factory</p>
-                <p id="footer"> Design | Developement | WordPress</p>
+                <p id="footer"> <a href="<?php echo home_url(); ?>/skills/visual-design/"> Design </a>| <a href="<?php echo home_url(); ?>/skills/development/">Developement </a> | <a href="<?php echo home_url(); ?>/skills/wordpress/">WordPress </a></p>
             </div>
         </footer>
   
